@@ -1,0 +1,40 @@
+Faça um programa que leia uma quantidade não determinada de números positivos. Calcule a quantidade
+de números pares e ímpares, a média de valores pares e a média geral dos números lidos. O número que
+encerrará a leitura será zero.
+
+------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Exercicio_04
+{
+    public static void main(String[]args){
+        
+        Scanner dados = new Scanner(System.in);
+        
+        int count = 0;
+        double numero = 0, par = 0, impar = 0;
+        double mediapar = 0, mediaimpar = 0, mediageral = 0;
+        
+        while(true)
+        {
+            System.out.println("SABENDO QUE AO DIGITAR O NUMERO (0)ZERO, O SISTEMA FINALIZARÁ");
+            System.out.println("INFORME OS NÚMEROS DESEJADOS: ");
+            numero = dados.nextInt();
+            mediageral = mediageral + numero;
+            if (numero == 0) break;
+            if(numero % 2 == 0){
+                mediapar = mediapar + numero;
+                numero = par++;
+            }else{
+                mediaimpar = mediaimpar + numero;
+                numero = impar++;
+            }
+            count++;
+        }
+        System.out.println("QUANTIDADE DE NÚMEROS PARES: " + par);
+        System.out.println("QUANTIDADE DE NÚMEROS IMPARES: " + impar);
+        System.out.println("MÉDIA DOS DE NÚMEROS PARES: " + mediapar/par);
+        System.out.println("MÉDIA DE NÚMEROS IMPARES: " + mediaimpar/impar);
+        System.out.println("TOTAL GERAL DOS NÚMEROS LIDOS: " + mediageral/count);
+    }
+}
