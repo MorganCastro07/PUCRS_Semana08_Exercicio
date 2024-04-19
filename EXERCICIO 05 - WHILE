@@ -1,0 +1,38 @@
+Implemente um programa em Java que lê 8 valores inteiros e positivos, calcule e escreva:
+(a) a média dos valores;
+(b) o maior deles;
+(c) o menor deles. 
+
+--------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Exercicio_05
+{
+    public static void main(String[]args){
+        
+        Scanner dados = new Scanner(System.in);
+        
+        int valor = 0, limite = 0;
+        int maior = Integer.MIN_VALUE, menor = Integer.MAX_VALUE;
+        int media = 0;
+        
+        System.out.println("INFORME OS VALORES DE 8 PRODUTOS");
+        
+        while(limite<8)
+        {
+            System.out.println("INFORME UM VALOR");
+            valor = dados.nextInt();
+            if (valor>0){
+            media = media + valor;
+            if(valor>maior) maior = valor;
+            if(valor<menor) menor = valor;
+            
+            limite++;
+            }else
+                System.out.println("USUÁRIO DIGITOU ERRADO");
+        }
+        System.out.println("MEDIA DOS VALORES: " + (double)media/5);
+        System.out.println("MAIOR DOS VALORES: " + maior);
+        System.out.println("MENOR DOS VALORES: " + menor);
+    }
+}
