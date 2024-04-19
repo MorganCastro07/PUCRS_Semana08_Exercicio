@@ -1,0 +1,44 @@
+Escreva um programa que leia uma quantidade desconhecida de números. A seguir, o programa deve
+contar e escrever a quantidade de valores pertencentes aos seguintes intervalos: [0; 25], [26; 50], [51; 75]
+e [76; 100]. A entrada de dados deve terminar quando for lido um número negativo. Ao final o programa
+deve exibir ainda a quantidade de valores lidos.
+Por exemplo, se o usuário digitar os números 4 e 2, esses números pertencem ao intervalo [0; 25].
+Nos demais intervalos, [26; 50], [51; 75] e [76; 100], a resposta será zero, pois os números digitados pelo
+usuário não fazem parte dos intervalos anteriores.
+
+---------------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Exercicio_08
+{
+     public static void main(String[]args){
+        Scanner dados = new Scanner(System.in);
+        
+        int numero;
+        int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0;
+        
+        System.out.println("O PROGRAMA ENCERRARÁ QUANDO FOR DIGITADO UM NÚMERO NEGATIVO.");
+           
+            while(true){
+            
+            System.out.println("INFORME OS NÚMEROS POSITIVOS");
+            numero = dados.nextInt();
+            
+            if (numero<0){
+                break;
+            }else if (numero<=25){
+                cont1++;
+            } else if (numero<=50){
+                cont2++;
+            } else if (numero<=75){
+                cont3++;
+            } else if (numero<=100){
+                cont4++;
+            }
+        }
+        System.out.println("[0;25]: " + cont1);
+        System.out.println("[26;50]: " + cont2);
+        System.out.println("[51;75]: " + cont3);
+        System.out.println("[76;100]: " + cont4);
+    }
+}
