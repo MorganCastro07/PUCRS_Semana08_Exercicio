@@ -1,0 +1,19 @@
+ Faça um programa que escreve todos os números pares entre 1000 e 2000.
+
+-------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Exercicio_06
+{
+    public static void main(String[]args){
+        
+        int count = 0;        
+        while(count<=100)
+        {
+            if(count%2==0)
+            System.out.println("NÚMERO PAR É: " + count);
+            count++;
+            
+        }
+    }
+}
