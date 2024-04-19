@@ -1,0 +1,32 @@
+Solicite ao usuário que insira números inteiros e conte quantos são pares e quantos são ímpares. O
+usuário pode continuar inserindo números até decidir parar. Mostre os números pares e ímpares.
+
+----------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+public class Exercicio_03
+{
+    public static void main(String[]args){
+        
+        Scanner dados = new Scanner(System.in);
+        
+        int numero, pares = 0, impares = 0;
+        char continuar;
+        
+        do{
+            System.out.println("DIGITE UM NÚMERO INTEIRO OU (0) PARA PARAR");
+            numero = dados.nextInt();
+            
+            if (numero !=0){
+                if(numero % 2 == 0){
+                    pares++;
+                } else{
+                    impares++;
+                }
+            }
+        } while(numero != 0);
+        
+        System.out.println("TOTAL DE NÚMEROS PARES: " + pares);
+        System.out.println("TOTAL DE NÚMEROS IMPARES: " + impares);
+    }
+}
